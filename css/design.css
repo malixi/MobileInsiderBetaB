@@ -1,0 +1,65 @@
+
+
+
+
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+    /* Add a gray background color and some padding to the footer */
+footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+.slider {
+     background-color:  #f0f5f5;
+   }
+
+#box1,#box2,#box3 {
+
+	height: 100px;
+
+	background-color: green;
+
+    margin: 0 auto;
+      width: 900px;
+
+
+
+}
+
+.block {
+  background: green;
+  height: 100px;
+  width: 100px;
+  display:inline-block;
+  margin: 10px;
+}
+
+.block1 {
+  background: green;
+  height: 80px;
+  width: 130px;
+  display:inline-block;
+  margin: 2px;
+}
+
+
+#boxes {
+
+
+  margin: 10px auto;
+  position: relative;
+  text-align:center;
+}
+
+#mobileBody {
+	height: 750px;
+
+}
+
+.btn-product{
+	width: 100%;
+}
