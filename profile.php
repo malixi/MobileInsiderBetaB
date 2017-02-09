@@ -163,7 +163,7 @@ if(!$_SESSION['Fname']){
                     </tbody>
                   </table>
 
-                  <a href="#" class="btn btn-warning"> Change Email </a>
+                  <a href="changeEmail.php" class="btn btn-warning"> Change Email </a>
                   <a href="ChangePassword.php" class="btn btn-warning"> Change Password </a>
                 </div>
               </div>

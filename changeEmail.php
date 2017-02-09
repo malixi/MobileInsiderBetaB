@@ -73,31 +73,30 @@ if(!$_SESSION['Fname']){
 
 <div class="container">
 
-  <h2> Change your Password, <?php
+  <h2> Change your email, <?php
 echo "".$_SESSION['Fname']." ".$_SESSION['Lname']."";
 ?> </h2>
 
   <br>
   <br>
 
-   <form class="col-md-5"  action="changepassword1.php" method="post">
+   <form class="col-md-5"  action="changeEmail1.php" method="post">
      <div class="form-group">
-         <label for="exampleInputEmail1">Enter your email address</label>
-         <input type="text" class="form-control input-lg" placeholder="example: user@gmail.com" name="email">
-     </div>
-     <div class="form-group">
-         <label for="exampleInputEmail1"> Enter your current password </label>
-         <input type="password" class="form-control input-lg" placeholder="Password" name="currentpassword">
-     </div>
-     <div class="form-group">
-         <label for="exampleInputEmail1"> Enter The new password </label>
-         <input type="password" class="form-control input-lg" placeholder="Password" name="newpassword">
-     </div>
-     <div class="form-group">
-         <input type="password" class="form-control input-lg" placeholder="Confirm Password" name="newpassword2">
+         <label for="exampleInputEmail1">Enter your current email address</label>
+         <input type="text" class="form-control input-lg" placeholder="user@gmail.com" name="oldemail">
      </div>
 
-     <input type="hidden" name="type" value="customer">
+     <div class="form-group">
+         <label for="exampleInputEmail1">Enter new email address</label>
+         <input type="text" class="form-control input-lg" placeholder="user@gmail.com" name="email">
+     </div>
+
+     <div class="form-group">
+         <input type="text" class="form-control input-lg" placeholder="Confirm email address" name="email1">
+     </div>
+
+
+
 
 
      <br>
