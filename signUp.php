@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <link href="css/design.css" rel="stylesheet"/>
   <link href="css/slider.css" rel="stylesheet"/>
- 
+
 
 </head>
 <body>
@@ -23,7 +23,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="index.php">Mobile Insider</a>
     </div>
@@ -41,8 +41,8 @@
     </form>
 
       <ul class="nav navbar-nav navbar-right">
-       
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login </a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
@@ -81,7 +81,7 @@
 
 
   <div class="form-group">
-    
+
   <label for="bday">Your Birthday</label>
   <input type="date" name="bday" required>
 
@@ -93,10 +93,10 @@
   <input type="radio" name="gender" value="F"> Female <br>
 
   </div>
-  
-  
+
+
   <h4> Your Contact Infomation and Address: </h4>
-  
+
   <div class="form-group">
        <label for="inputname">Complete Address:</label>
        <input type="text" class="form-control"  placeholder="House Number, Street Name, Barangay, City/Municipality and Province" name="address">
@@ -125,7 +125,7 @@
    </div>
   <div class="form-group">
        <label for="inputname">Mobile Number</label>
-       <input type="tel" class="form-control"  placeholder="+639" name="tel">
+       <input type="tel" class="form-control"  placeholder="ex.09###" name="tel">
     </div>
 
    <input type="hidden" name="type" value="customer">
@@ -149,7 +149,7 @@
  <br>
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
+  <p>Online Store Copyright</p>
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
     <button type="button" class="btn btn-danger">Sign Up</button>

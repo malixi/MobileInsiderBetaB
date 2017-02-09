@@ -10,6 +10,9 @@ DEFINE ('DB_NAME', 'storeb');
 $dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
 OR die('could not connect to MariaDB'.mysqli_connect_error());
 
+if(!$_SESSION['Fname']){
+ header("Location: index.php", 404);
+          exit;}
 
 
 ?>
@@ -23,11 +26,11 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <link href="css/design.css" rel="stylesheet"/>
   <link href="css/slider.css" rel="stylesheet"/>
   <link href="css/profile.css" rel="stylesheet"/>
- 
+
 
 </head>
 <body>
@@ -40,14 +43,14 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Mobile Insider</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="mobile1.php">Products</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <form class="navbar-form navbar-right">
@@ -59,7 +62,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Log Out </a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
       </ul>
     </div>
   </div>
@@ -72,12 +75,11 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
       <div class="row">
       <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
 
-       <br>
-<p class=" text-info">May 05,2014,03:00 pm </p>
+
       </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-   
-   
+
+
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"><?php
@@ -86,8 +88,8 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
-                
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png" class="img-circle img-responsive"> </div>
+
 
 
               <!--  $_SESSION['Fname']=$rows['first_name'];
@@ -99,7 +101,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
       $_SESSION['Cadd']=$rows['adress'];
       $_SESSION['Ccity']=$rows['city']; -->
 
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
@@ -118,7 +120,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
   echo "".$_SESSION['Cbday']."";
 ?></td>
                       </tr>
-                   
+
                          <tr>
                              <tr>
                         <td>Gender</td>
@@ -144,17 +146,25 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
   echo "".$_SESSION['Cnum']."";
 ?></td>
                       </tr>
+                      <tr>
+
+                       <td>Date account created</td>
+                       <td><?php
+ echo "".$_SESSION['Cdate']."";
+?></td>
+                     </tr>
+
                         <td>Phone Number</td>
                         <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
                         </td>
-                           
+
                       </tr>
-                     
+
                     </tbody>
                   </table>
-                  
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+
+                  <a href="#" class="btn btn-primary"> Change Email </a>
+                  <a href="#" class="btn btn-primary"> Change Password </a>
                 </div>
               </div>
             </div>
@@ -165,7 +175,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
                             <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
                     </div>
-            
+
           </div>
         </div>
       </div>
@@ -175,7 +185,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
  <br>
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
+  <p>Online Store Copyright</p>
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
     <button type="button" class="btn btn-danger">Sign Up</button>

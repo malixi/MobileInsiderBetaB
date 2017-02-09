@@ -24,13 +24,14 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <link href="css/design.css" rel="stylesheet"/>
   <link href="css/slider.css" rel="stylesheet"/>
   <script src="js/YourExternalJQueryScripts.js"></script>
+  <link href="css/test.css" rel="stylesheet"/>
 
 
-     <script src="js/jssor.slider-22.1.9.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-22.1.9.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         jssor_1_slider_init = function() {
 
@@ -82,14 +83,14 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Mobile Insider</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="mobile1.php">Products</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
       <form class="navbar-form navbar-right">
@@ -103,7 +104,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
         <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> <?php
 	echo "".$_SESSION['Fname']." ".$_SESSION['Lname']."";
 ?> </a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
       </ul>
     </div>
   </div>
@@ -118,13 +119,19 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
-            
-            <div>
-                <img data-u="image" src="img/banner2.png" />
-            </div>
-            <div>
-                <img data-u="image" src="img/banner3.jpg" />
-            </div>
+
+          <div>
+              <img data-u="image" src="img/lg.png" />
+          </div>
+          <div>
+              <img data-u="image" src="img/mate.png" />
+          </div>
+          <div>
+              <img data-u="image" src="img/sony.png" />
+          </div>
+          <div>
+              <img data-u="image" src="img/banner1.jpg" />
+          </div>
             <a data-u="any" href="http://www.jssor.com" style="display:none">Full Width Slider</a>
         </div>
         <!-- Bullet Navigator -->
@@ -142,13 +149,13 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 <div class="container" id="boxes">
 
 <hr>
-  
+
   <p style="text-align: center;"> what are you looking for <p>
 
-        <div class="block">1. name of the company</div><!--
-     --><div class="block">2. name of the company</div><!--
-     --><div class="block">3. name of the company</div><!--
-     --><div class="block">4. name of the company</div>
+        <div class="block"><img src="img\brands.png"></div><!--
+     --><div class="block"><img src="img\highlights.png"></div><!--
+     --><div class="block"><img src="img\phones.png"></div><!--
+     --><div class="block"><img src="img\sales.png"></div>
 <br>
 <br>
 
@@ -161,71 +168,60 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 <br>
 <br>
 
-<div class="container slider"> 
+<div class="container slider">
+
+
+
 
  <h4 style="text-align: center;"> Devices that you will love </h2>
  <hr>
 
    <div>
-      <img src="https://s19.postimg.org/6ocmhrn77/image.png" alt="slides" style="width:20%;
+      <img src="https://s19.postimg.org/68afprzxv/Untitled_1.png" alt="slides" style="width:20%; height:50%;
        float: left; padding-top: 2%">
     </div>
 
-  <div style="width: 80%; overflow-x:auto; white-space: nowrap; float: right;">
-    <div style="display: inline-block;">
-      <div>
-      <img src="https://www.mazda.ph/wp-content/uploads/2016/07/digibro_mazda2-26-772x515.jpg" style="width:650px;height:450px;">
-    
-    <center class="des"> Mazda 2  <br>
-       <a href="#"  id="arrowdown">
-  
-    </div>
+ <div class="boxtest11">
 
-    </div>
+  <?php
 
-    <div style="display: inline-block;">
-         <img src="https://www.mazda.ph/wp-content/uploads/2016/07/MX-5-2015-2-690x515.jpg" style="width:650px;height:450px;">
-    
-    <center class="des"> Mazda MX-5 <br>
-    <a href="#"  id="arrowdown">
-   </center>
+$con=mysqli_connect('localhost','root','','storeb');
 
-    </div>
-</div> 
+
+
+//$results = mysql_query($con"SELECT * FROM product
+  //WHERE brand LIKE 'Apple'") or die(mysql_error());
+
+
+$results=mysqli_query($con,'SELECT * FROM product WHERE brand LIKE "Apple" LIMIT 10');
+
+
+
+while($row=mysqli_fetch_array($results)){
+
+    $width = 100;
+
+    echo '<div class="test boxtest">
+
+    '.$row['title'].' <br>
+    '.$row['model'].' <br>
+    '.$row['price'].' <br>
+    '.$row['description'].' <br>
+
+     <img src="'.$row['brand_image'].'" width="' . $width . 'px" height="100px"/>
+
+    </div>';
+
+
+}
+mysqli_close($con);
+
+
+?>
+
 </div>
 
-<br>
-<br>
 
-
-<div class="container slider"> 
-
-   <div>
-      <img src="https://s19.postimg.org/6ocmhrn77/image.png" alt="slides" style="width:20%;
-       float: left; padding-top: 2%">
-    </div>
-
-  <div style="width: 80%; overflow-x:auto; white-space: nowrap; float: right;">
-    <div style="display: inline-block;">
-      <div>
-      <img src="https://www.mazda.ph/wp-content/uploads/2016/07/digibro_mazda2-26-772x515.jpg" style="width:650px;height:450px;">
-    
-    <center class="des"> Mazda 2  <br>
-       <a href="#"  id="arrowdown">
-  
-    </div>
-
-    </div>
-
-    <div style="display: inline-block;">
-         <img src="https://www.mazda.ph/wp-content/uploads/2016/07/MX-5-2015-2-690x515.jpg" style="width:650px;height:450px;">
-    
-    <center class="des"> Mazda MX-5 <br>
-    <a href="#"  id="arrowdown">
-   </center>
-
-    </div>
-</div> 
 </div>
 
 <br>
@@ -233,7 +229,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 <br>
 <br>
 
-<div class="container">    
+<div class="container">
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
@@ -242,14 +238,14 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
         <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
       <div class="panel panel-danger">
         <div class="panel-heading">BLACK FRIDAY DEAL</div>
         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
       <div class="panel panel-success">
         <div class="panel-heading">BLACK FRIDAY DEAL</div>
         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
@@ -261,9 +257,9 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 
 <br>
 
-	
 
-<div class="container">    
+
+<div class="container">
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
@@ -272,14 +268,14 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
         <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">BLACK FRIDAY DEAL</div>
         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">BLACK FRIDAY DEAL</div>
         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
@@ -290,7 +286,7 @@ OR die('could not connect to MariaDB'.mysqli_connect_error());
 </div><br><br>
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
+  <p>Online Store Copyright</p>
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
     <button type="button" class="btn btn-danger">Sign Up</button>

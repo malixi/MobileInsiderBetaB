@@ -9,7 +9,7 @@
     $enpassword = md5($cpass);
 
     $ctype=$_POST['type'];
-    
+
 
 
 	if ($ctype == "customer") {
@@ -19,7 +19,7 @@
 		$result = $stmt->get_result();
 
 		if($rows = $result->fetch_assoc()){
-		$_SESSION['Fname']=$rows['first_name'];
+		  $_SESSION['Fname']=$rows['first_name'];
     	$_SESSION['Lname']=$rows['last_name'];
     	$_SESSION['Cemail']=$rows['email'];
     	$_SESSION['Cbday']=$rows['bday'];
@@ -27,16 +27,18 @@
     	$_SESSION['Cnum']=$rows['mobileNumber'];
     	$_SESSION['Cadd']=$rows['address'];
     	$_SESSION['Ccity']=$rows['city'];
-    	
-    	
+			$_SESSION['Cdate']=$rows['date_created'];
+
+
 			echo"<script>location.href='home.php';</script>";
-			  
+
 
 		}else{
 			echo"<script>window.alert('Email Address/Password Incorrect');</script>";
-			
+			echo"<script>location.href='login.html';</script>";
+
 		}
 	}
-	
-	
+
+
 ?>
