@@ -19,6 +19,8 @@
 		$result = $stmt->get_result();
 
 		if($rows = $result->fetch_assoc()){
+			$_SESSION['CID']=$rows['user_id'];
+
 		  $_SESSION['Fname']=$rows['first_name'];
     	$_SESSION['Lname']=$rows['last_name'];
     	$_SESSION['Cemail']=$rows['email'];

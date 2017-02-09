@@ -11,7 +11,7 @@ $dbconn = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME)
 OR die('could not connect to MariaDB'.mysqli_connect_error());
 
 if(!$_SESSION['Fname']){
- header("Location: index.php", 404);
+ header("Location: login.html", 404);
           exit;}
 
 
@@ -49,7 +49,7 @@ if(!$_SESSION['Fname']){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="home.php">Home</a></li>
         <li><a href="mobile1.php">Products</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -163,8 +163,8 @@ if(!$_SESSION['Fname']){
                     </tbody>
                   </table>
 
-                  <a href="#" class="btn btn-primary"> Change Email </a>
-                  <a href="#" class="btn btn-primary"> Change Password </a>
+                  <a href="#" class="btn btn-warning"> Change Email </a>
+                  <a href="ChangePassword.php" class="btn btn-warning"> Change Password </a>
                 </div>
               </div>
             </div>
